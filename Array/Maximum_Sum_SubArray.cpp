@@ -8,3 +8,12 @@ int maxsum(int arr[], int n ){
     }
     return res;
 }
+
+// we need to get a sub array that return the maximum sum
+
+// we will initiate two variables and traverse the array
+
+// we will assign the values to those variables as the first element of the array
+
+// we will update maxEnding with max of the sum of maxEnding with current element or by the element itself
+// we will update res with max of res and maxEnding
