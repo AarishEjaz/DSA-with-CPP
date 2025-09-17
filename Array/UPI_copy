@@ -1,0 +1,47 @@
+#include <iostream>
+#include <map>
+using namespace std;
+
+
+void pay(int amt, string payor){
+    // storing data in key:value pair
+    map<string, int> users;
+    // adding values
+    users["aarish"] = 1000;
+    users["rahul"] = 2000;
+    users["alex"] = 3000;
+
+    // checking if the amount is under limit
+    if(amt>users[payor]){
+        cout<<"amount exceeded the limit set by "<<payor;
+    }else{
+        users[payor]-=amt;
+        cout<< "payment successful"<<endl;
+        cout<<"Your remaining balance is "<<users[payor];
+    }
+
+}
+
+int main(){
+
+
+    int my_bal,amount;
+    cout<<"enter the amout"<<endl;
+    cin>>amount;
+
+    cout<<"enter your balance"<<endl;
+    cin>>my_bal;
+
+    cout<<"payment successful"<<endl;
+    cout<<"remaining balance is "<<my_bal-amount<<endl;
+
+    if(my_bal<amount){
+        string payor;
+
+        cout<<"Your balance is not suffecient please enter payor name"<<endl;
+        cin>>payor;
+
+        pay(amount,payor);
+    }
+
+}
